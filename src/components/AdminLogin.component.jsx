@@ -10,13 +10,13 @@ const AdminLogin = function(){
 
           <div className='row'>
           <div className="input-field">
-          <input placeholder="username" type="text" className="validate" />
+          <input placeholder="Username" type="text" className="validate" />
             </div>
             </div> 
           
             <div className="row">
             <div className="input-field">
-               <input placeholder='password' type="password" className="validate" />
+               <input placeholder='Password' type="password" className="validate" />
             </div>
           </div>
           <div className='CenterButton'>
