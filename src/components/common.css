@@ -1,0 +1,31 @@
+/* Homepage styles */
+.HomePage{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+/* end of homepage styles */
+
+
+/*Admin Login*/
+.AdminLogin{
+width: 450px;
+}
+.CenterButton{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Available Movie */
+.AvailableMovie{
+width:800px;
+}
+
+/* MovieSearch */
+.MovieSearch{
+    margin-top: 30px;
+}
+.RentButton{
+    margin-left: 20px;
+}
