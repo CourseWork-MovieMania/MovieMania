@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {NavLink} from 'react-router-dom';
 const AdminLogin = function(){
     return(
         <div className="AdminLogin">
@@ -20,8 +20,11 @@ const AdminLogin = function(){
             </div>
           </div>
           <div className='CenterButton'>
-            <input  type='submit' className="waves-effect waves-light btn blue darken-3" value='Login'/>
-            </div>    
+            {/*Adding a navlink for comfort for now to be changed later*/}
+            <NavLink to = "/addmovie">
+              <input  type='submit' className="waves-effect waves-light btn blue darken-3" value='Login'/>
+            </NavLink>
+          </div>    
         
           </div>
         </div>
