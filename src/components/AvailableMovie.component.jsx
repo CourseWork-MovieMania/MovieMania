@@ -9,7 +9,7 @@ const AvailableMovie = (props)=>{
 			<div className="card-panel white lighten-5 z-depth-1">
 			  <h5 className='center'>Available Movies</h5>
 			  <input placeholder='Search' type='search' onChange={(event)=>props.updateList(event.target.value)}/>
-			  <MovieSearch list = {props.list} />
+			  <MovieSearch price={props.price} list = {props.list} />
 			</div>
         </div>
     )

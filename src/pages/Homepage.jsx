@@ -7,7 +7,7 @@ const HomePage = (props)=>{
     return(
     <div className="row HomePage">
     <AdminLogin />
-    <AvailableMovie updateList = {props.updateList} list = {props.list} />
+    <AvailableMovie price={props.price} updateList = {props.updateList} list = {props.list} />
     </div>
     
     )
