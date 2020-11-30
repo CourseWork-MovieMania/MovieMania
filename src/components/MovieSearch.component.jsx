@@ -18,7 +18,9 @@ const MovieSearch = (props)=>{
             <tr>
               <td>{m.obj.movieName}</td>
               <td>{m.obj.genre}</td>
-              <td>{m.obj.price} <a href='/' className="waves-effect waves-light btn blue darken-3 RentButton">Rent</a></td>
+              <td>{m.obj.price} 
+                <div onClick={()=>props.price(m.obj.price)}  className="waves-effect waves-light btn blue darken-3 RentButton">Rent</div>
+              </td>
             </tr>
             );
     }):null}
