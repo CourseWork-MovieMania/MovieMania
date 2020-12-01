@@ -7,7 +7,8 @@ import AddMovie from './pages/AddMovie';
 import Movies from './pages/Movies';
 import AdminSignup from './pages/AdminSignup';
 import Admins from './pages/Admins';
-import Checkout from './pages/Checkout'
+import Checkout from './pages/Checkout';
+import CheckAuth from './pages/CheckAuth';
 import {Link} from 'react-router-dom';
 
 
@@ -64,7 +65,6 @@ class App extends React.Component {
         }
     }
     render(){
-        console.log(this.state);
         return(
             <>
             <BrowserRouter>
@@ -75,14 +75,16 @@ class App extends React.Component {
             <Route path='/addmovie' render={()=><AddMovie updateMovies = {this.updateMovies}/>}/>
             <Route path= '/adminsignup' render={()=><AdminSignup addAdmin = {this.addAdmin}/>}/>
             <Route path= '/checkout' render={(props)=><Checkout {...props} list = {this.state.checkoutMovies} />}/>
+            <Route path= '/confirmauth' render={()=><CheckAuth auth = {this.state.auth}/>}/>
             </Switch>
             <center>
             <div>
+                <hr/>
                 <p>Total price</p>
                 {this.state.price}
 
             </div>
-            <Link to="/checkout">buy</Link>
+            <Link to="/checkout"><button className="waves-effect waves-light btn blue darken-3">Buy</button></Link>
             </center>
             </div>
             </BrowserRouter>
