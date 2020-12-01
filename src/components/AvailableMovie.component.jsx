@@ -1,7 +1,7 @@
 import React from 'react';
 import MovieSearch from './MovieSearch.component';
 import Movies from '../pages/Movies';
-import './common.css';
+import './common.css';	
 
 const AvailableMovie = (props)=>{
     return(
