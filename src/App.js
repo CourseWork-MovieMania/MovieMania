@@ -5,11 +5,14 @@ import Header from './components/Header.component';
 import HomePage from './pages/Homepage';
 import AddMovie from './pages/AddMovie';
 import Movies from './pages/Movies';
+import AdminSignup from './pages/AdminSignup';
+import Admins from './pages/Admins';
 class App extends React.Component {
 
     state = {
         movies:[],
         list:[],
+        admins:[],
         price:0
     }
 
@@ -35,7 +38,15 @@ class App extends React.Component {
         this.setState({list: list});
         setTimeout(()=>console.log(this.state.list),100)
     }
+    addAdmin = (obj)=>{
+        const adminclassobj = new Admins(obj);
+        const admins = [...this.state.admins];
+        admins.push(adminclassobj);
+        this.setState({admins: admins});
+    }
+
     render(){
+        console.log(this.state);
         return(
             <>
             <BrowserRouter>
@@ -44,7 +55,7 @@ class App extends React.Component {
             <Switch>
             <Route exact path='/' render={()=><HomePage price={this.updatePrice} updateList = {this.updateList} list = {this.state.list} />} />
             <Route path='/addmovie' render={()=><AddMovie updateMovies = {this.updateMovies}/>}/>
-            
+            <Route path= '/adminsignup' render={()=><AdminSignup addAdmin = {this.addAdmin}/>}/>
             </Switch>
             <div>
                 <center><p>Total price</p></center>
