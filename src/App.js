@@ -13,6 +13,7 @@ class App extends React.Component {
         movies:[],
         list:[],
         admins:[],
+        auth: false,
         price:0
     }
 
@@ -44,7 +45,12 @@ class App extends React.Component {
         admins.push(adminclassobj);
         this.setState({admins: admins});
     }
-
+    checkAuth =(obj)=>{
+        const admins = [...this.state.admins]
+        if(admins.filter(m=>(m.obj.username===obj.username && m.obj.password===obj.password)).length){
+            this.setState({auth: true});
+        }
+    }
     render(){
         console.log(this.state);
         return(
@@ -53,7 +59,7 @@ class App extends React.Component {
             <div className="App">
             <Header />
             <Switch>
-            <Route exact path='/' render={()=><HomePage price={this.updatePrice} updateList = {this.updateList} list = {this.state.list} />} />
+            <Route exact path='/' render={()=><HomePage price={this.updatePrice} updateList = {this.updateList} list = {this.state.list} checkAuth = {this.checkAuth}/>} />
             <Route path='/addmovie' render={()=><AddMovie updateMovies = {this.updateMovies}/>}/>
             <Route path= '/adminsignup' render={()=><AdminSignup addAdmin = {this.addAdmin}/>}/>
             </Switch>

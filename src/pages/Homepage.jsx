@@ -6,7 +6,7 @@ import '../App.css';
 const HomePage = (props)=>{
     return(
     <div className="row HomePage">
-    <AdminLogin />
+    <AdminLogin checkAuth = {props.checkAuth}/>
     <AvailableMovie price={props.price} updateList = {props.updateList} list = {props.list} />
     </div>
     
