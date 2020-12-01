@@ -24,7 +24,9 @@ const AdminLogin = function(props){
             </div>
           </div>
           <div className='CenterButton'>
-              <input  type='submit' className="waves-effect waves-light btn blue darken-3" value='Login' onClick={()=>{return props.checkAuth(obj)}}/>
+              <NavLink to = '/confirmauth'>
+                <input  type='submit' className="waves-effect waves-light btn blue darken-3" value='Login' onClick={()=>{return props.checkAuth(obj)}}/>
+              </NavLink>
           </div>    
         
           </div>

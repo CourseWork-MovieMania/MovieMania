@@ -27,7 +27,7 @@ class Checkout extends Component {
             <ul>
                 {list}
             </ul>
-            <button onClick={this.onConfirmClick}>Confirm Order</button>
+            <button className="waves-effect waves-light btn blue darken-3" onClick={this.onConfirmClick}>Confirm Order</button>
 
             {this.state.confirm}
             </div>
