@@ -7,6 +7,10 @@ import AddMovie from './pages/AddMovie';
 import Movies from './pages/Movies';
 import AdminSignup from './pages/AdminSignup';
 import Admins from './pages/Admins';
+import Checkout from './pages/Checkout'
+import {Link} from 'react-router-dom';
+
+
 class App extends React.Component {
 
     state = {
@@ -14,16 +18,24 @@ class App extends React.Component {
         list:[],
         admins:[],
         auth: false,
-        price:0
+        price:0,
+        checkoutMovies:[]
     }
 
 
-    updatePrice = (price) => {
+    // updateCheckoutList = () => {
+
+    // }
+
+    updatePrice = (obj) => {
         let temp = this.state.price
-        temp = temp+parseInt(price)
+        temp = temp+parseInt(obj.price)
         console.log(temp)
+        let array = [...this.state.checkoutMovies];
+        array.push(obj)
         this.setState({
-            price:temp
+            price:temp,
+            checkoutMovies:array
         })
     }
 
@@ -62,11 +74,16 @@ class App extends React.Component {
             <Route exact path='/' render={()=><HomePage price={this.updatePrice} updateList = {this.updateList} list = {this.state.list} checkAuth = {this.checkAuth}/>} />
             <Route path='/addmovie' render={()=><AddMovie updateMovies = {this.updateMovies}/>}/>
             <Route path= '/adminsignup' render={()=><AdminSignup addAdmin = {this.addAdmin}/>}/>
+            <Route path= '/checkout' render={(props)=><Checkout {...props} list = {this.state.checkoutMovies} />}/>
             </Switch>
+            <center>
             <div>
-                <center><p>Total price</p></center>
-                <center>{this.state.price}</center>
+                <p>Total price</p>
+                {this.state.price}
+
             </div>
+            <Link to="/checkout">buy</Link>
+            </center>
             </div>
             </BrowserRouter>
             
