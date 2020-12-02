@@ -28,6 +28,14 @@ class App extends React.Component {
 
     // }
 
+    clearState = () =>{
+        this.setState({
+            price:0,
+            checkoutMovies:[],
+
+        })
+    }
+
     updatePrice = (obj) => {
         let temp = this.state.price
         temp = temp+parseInt(obj.price)
@@ -74,7 +82,7 @@ class App extends React.Component {
             <Route exact path='/' render={()=><HomePage price={this.updatePrice} updateList = {this.updateList} list = {this.state.list} checkAuth = {this.checkAuth}/>} />
             <Route path='/addmovie' render={()=><AddMovie updateMovies = {this.updateMovies}/>}/>
             <Route path= '/adminsignup' render={()=><AdminSignup addAdmin = {this.addAdmin}/>}/>
-            <Route path= '/checkout' render={(props)=><Checkout {...props} list = {this.state.checkoutMovies} />}/>
+            <Route path= '/checkout' render={(props)=><Checkout {...props} clearState = {this.clearState} list = {this.state.checkoutMovies} />}/>
             <Route path= '/confirmauth' render={()=><CheckAuth auth = {this.state.auth}/>}/>
             </Switch>
             <center>
