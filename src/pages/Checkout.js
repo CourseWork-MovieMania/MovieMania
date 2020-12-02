@@ -1,10 +1,13 @@
 import React,{ Component} from 'react'
  
 class Checkout extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            confirm:null
+        }  ;
+    };
 
-    state={
-        confirm:null
-    }
 
     onConfirmClick = () => {
         this.setState({
