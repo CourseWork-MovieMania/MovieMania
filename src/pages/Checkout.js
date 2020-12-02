@@ -10,6 +10,7 @@ class Checkout extends Component {
         this.setState({
             confirm:"Order Confirmed!"
         })
+        this.props.clearState()
         setTimeout(()=>this.props.history.push("/"),500)
                
     }
